@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080a14">
+<title>A Letter From My Heart ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+:root{
+ --red:#ff3158;
+ --gold:#f6d6a7;
+ --night:#080a14;
+}
+body{
+ margin:0;min-height:100vh;padding:22px 15px;
+ font-family:Tahoma,Arial,sans-serif;color:#fff;
+ background:
+ radial-gradient(ellipse at 50% 0%,#40182b 0%,transparent 45%),
+ radial-gradient(ellipse at 100% 100%,#251329 0%,transparent 45%),
+ linear-gradient(145deg,#070810,#11101c 55%,#170c18);
+}
+#stars,#floating{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.star{
+ position:absolute;background:white;border-radius:50%;
+ animation:twinkle 3s infinite alternate;
+}
+@keyframes twinkle{from{opacity:.15}to{opacity:.9}}
+.float{
+ position:absolute;bottom:-50px;
+ animation:rise linear infinite;
+ filter:drop-shadow(0 0 12px #ff315855);
+}
+@keyframes rise{
+ to{transform:translateY(-115vh) rotate(35deg);opacity:0}
+}
+main{width:100%;max-width:480px;margin:auto;position:relative;z-index:1}
+.card{
+ padding:27px 19px;border-radius:28px;text-align:center;
+ border:1px solid #ffffff1e;
+ background:linear-gradient(145deg,#ffffff0d,#ffffff03);
+ box-shadow:0 25px 75px #0008,inset 0 1px #ffffff15;
+ backdrop-filter:blur(16px);
+}
+.kicker{
+ color:var(--gold);font-size:11px;letter-spacing:3px;
+ direction:ltr;margin-bottom:12px;
+}
+h1{font-size:27px;line-height:1.7;margin:10px 0}
+p{line-height:2}
+.muted{color:#c7bdcb}
+.emblem{
+ width:120px;height:120px;border-radius:50%;
+ display:grid;place-items:center;margin:12px auto 22px;
+ background:radial-gradient(circle at 30% 23%,#ffbdc9,#e51e4d 45%,#660e2c 80%);
+ box-shadow:inset -10px -12px 25px #3a001a99,
+ 0 0 35px #ff315833,0 20px 45px #0007;
+ font-size:64px;animation:pulse 3s ease-in-out infinite;
+}
+@keyframes pulse{50%{transform:scale(1.045)}}
+input{
+ width:100%;padding:16px;border-radius:14px;
+ background:#ffffff0b;border:1px solid #ffffff25;
+ color:white;font-size:16px;text-align:center;
+ outline:none;margin:14px 0;
+}
+input::placeholder{color:#b6a9b8}
+input:focus{border-color:#ff6481}
+button{
+ width:100%;padding:15px;border:1px solid #ff9aaa55;
+ border-radius:14px;color:white;font-size:16px;
+ font-weight:bold;cursor:pointer;
+ background:linear-gradient(110deg,#9e1537,#e52c50,#9e1537);
+ box-shadow:0 8px 25px #c21a3930;
+}
+button:active{transform:scale(.98)}
+#error{min-height:24px;color:#ffb1c0;font-size:13px}
+#letter{display:none}
+.topline{color:var(--gold);font-size:12px;letter-spacing:2px}
+.intro{font-size:14px;color:#d5c7d3}
+.message{
+ text-align:right;white-space:pre-line;
+ line-height:2.25;font-size:16px;
+ color:#f8edf3;margin-top:22px;
+ padding:20px 16px;border-radius:18px;
+ border:1px solid #ffffff17;
+ background:linear-gradient(145deg,#ffffff0a,#ff315808);
+}
+.message p{margin:0 0 20px}
+.message p:last-child{margin-bottom:0}
+.rule{
+ width:65px;height:1px;margin:23px auto;
+ background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.signature{font-size:15px;color:var(--gold);line-height:2.2}
+.music{
+ margin-top:25px;padding:17px 12px;
+ border:1px solid #ff647d30;border-radius:20px;
+ background:#ff315808;
+}
+.redhearts{font-size:24px;letter-spacing:5px}
+iframe{width:100%;height:152px;border:0;border-radius:12px;margin-top:10px}
+.small{font-size:12px;color:#bfb1c0;line-height:1.9}
+a{color:#ffc2cf}
+#letter{animation:appear .8s ease}
+@keyframes appear{
+ from{opacity:0;transform:translateY(15px)}
+ to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+<div id="stars"></div>
+<div id="floating"></div>
+
+<main>
+<section class="card" id="lock">
+ <div class="kicker">A SECRET LETTER • JUST FOR YOU</div>
+ <div class="emblem">❤️</div>
+ <p class="topline">في كلام طالع من القلب</p>
+ <h1>رسالة ليكي إنتِ وبس</h1>
+ <p class="muted">
+ في رسالة مستنياكي هنا،<br>
+ خدي لحظة وافتحيها براحتك ✨
+ </p>
+
+ <form id="form">
+  <input id="pass" type="password"
+   placeholder="اكتبي كلمة السر هنا..." required
+   autocomplete="off" aria-label="كلمة السر">
+  <button type="submit">افتحي الرسالة ♥</button>
+ </form>
+ <div id="error" role="status"></div>
+ <div class="rule"></div>
+ <p class="small">A little piece of my heart ❤️</p>
+</section>
+
+<section class="card" id="letter">
+ <div class="kicker">WORDS I COULDN'T SAY</div>
+ <div class="emblem">❤️‍🔥</div>
+ <p class="topline">إلى ندى.. أقرب واحدة لقلبي</p>
+ <h1>في كلام نفسي تعرفيه ❤️</h1>
+ <p class="intro">اقرئي الكلام ده للآخر، لأنه من قلبي ليكي.</p>
+
+ 
+<div class="message">
+<p>انتي مش مجرد حد قريب مني انتي من اجمل الحاجه حصلت في حياتي وانتي بالنسبالي مش اي حد وخلاص انتي اقرب واحدة لقلبي واغلى حد عندي بجد 🥹❤️ وجودك في حياتي بيفرق معايا اكتر ما تتخيلي وضحكتك لوحدها كفيله انها تحسن يومي مهما كان صعب وكلامك معايا من الحاجات اللي بتفرح قلبي من غير ما تحسي 🫶🏻❤️❤️</p>
+
+<p>ومهما اقولك عن مكانتك عندي عمري ما هوصفها زي ما هي جوايا لانك غاليه عليا بطريقه متتصوريهاش وليكي مكانه محدش يقدر ياخدها مهما حصل ابدا 🥺❤️ وانتي اكتر وحده قريبه ليا وناا بجد ممتن انك في حياتي وان ليا حد زيك اقدر اتكلم معاه واضحك معاه واشاركه تفاصيل يومي وكون مبسوط ونا بتكلم كده 🤗❤️</p>
+
+<p>ونا يمكن مش بعرف اعبر كل مره عن اللي جوايا بس صدقيني انتي غاليه عليا اوي وبتفرق معايا كل تفصيلة تخصككك وزعلك بيزعلنيا اووي وفرحتك بتفرحني اووي وكل اللي بتمناه انك تفضلي دايما مبسوطه ومرتاحه واكون سبب في ضحكتك ديما 😊❤️</p>
+
+<p>انتي حتتتة من قلبي ياندوشه والله وصاحبتي واقرب حد ليا 🫂❤️</p>
+
+<p>ربنا يخليكي ليا يا اغلى الناس ويديم ضحكتك في حياتي وما يحرمنيش منك ولا من وجودك الحلو وتفضلي دايما عارفة ان ليكي حد بيحبكك وبيقدرك وبيشوفك من احلى حاجه حصلتله في حياتي كلها 🥹❤️🫶🏻</p>
+
+<p>بحبك اوي يا اغلى واحن واقرب واحده لقلبي ويا رب تفضلي دايما جزء من ايامي الحلوه 😍❤️</p>
+</div>
+
+
+ <div class="music">
+  <div class="redhearts">❤️ ❤️ ❤️</div>
+  <h3>الأغنية اللي اخترتها ليكي 🎵</h3>
+  <p class="small">اسمعيها وإنتِ بتقرئي الرسالة ❤️</p>
+
+  <iframe
+   src="https://open.spotify.com/embed/track/55edd3SDyaoCC8pZ9xhwFz?utm_source=generator"
+   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+   loading="lazy"
+   title="الأغنية المختارة على Spotify">
+  </iframe>
+
+  <div class="redhearts">❤️‍🔥 ❤️‍🩹 ❤️</div>
+ </div>
+
+ <p class="small">Made with love, just for you. ♡</p>
+</section>
+</main>
+
+<script>
+const form=document.getElementById('form');
+const pass=document.getElementById('pass');
+const lock=document.getElementById('lock');
+const letter=document.getElementById('letter');
+const error=document.getElementById('error');
+
+form.addEventListener('submit',function(e){
+ e.preventDefault();
+
+ if(pass.value.trim().toLowerCase()==='my best friend'){
+  lock.style.display='none';
+  letter.style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+ }else{
+  error.textContent='الكلمة مش مظبوطة، جرّبي تاني ❤️';
+  pass.value='';
+ }
+});
+
+// نجوم متلألئة
+const stars=document.getElementById('stars');
+for(let i=0;i<65;i++){
+ const s=document.createElement('span');
+ s.className='star';
+ const size=1+Math.random()*2;
+ s.style.width=size+'px';
+ s.style.height=size+'px';
+ s.style.left=Math.random()*100+'%';
+ s.style.top=Math.random()*100+'%';
+ s.style.animationDelay=Math.random()*3+'s';
+ stars.appendChild(s);
+}
+
+// قلوب حمراء عائمة
+const floating=document.getElementById('floating');
+const icons=['❤️','♡','♥','✨','❤️‍🔥'];
+for(let i=0;i<20;i++){
+ const h=document.createElement('span');
+ h.className='float';
+ h.textContent=icons[i%icons.length];
+ h.style.left=Math.random()*100+'%';
+ h.style.fontSize=(13+Math.random()*20)+'px';
+ h.style.animationDuration=(9+Math.random()*12)+'s';
+ h.style.animationDelay=(-Math.random()*18)+'s';
+ floating.appendChild(h);
+}
+</script>
+</body>
+</html>
